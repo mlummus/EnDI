@@ -63,6 +63,8 @@ for i in range(len(read_basin)):
         po_df = pd.DataFrame(percent_overlap.items(), columns=['RGIId','p_o'])
         read_glac1=read_glac.join(po_df.set_index('RGIId'), on='RGIId')
         basin_glac = read_glac1.loc[read_glac1['p_o']>60] ## Select only glaciers that are mostly in the basin
+        basin_glac['Basin_ID'] = basin_num
+        basin_glac['Basin_name'] = basin_name
         basin_glac_df = gpd.GeoDataFrame(basin_glac, geometry='geometry') ## Ensure the dataframes are GeoDataFrames
         basin = read_basin_df.loc[[i]]
         basin_df = gpd.GeoDataFrame(basin, geometry='geometry')
