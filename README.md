@@ -1,2 +1,2 @@
 # EnDI
-Code used to create an environmental disturbance index in High Mountain Asia
+Code used to create an Environmental Disturbance Index (EnDI) in High Mountain Asia
